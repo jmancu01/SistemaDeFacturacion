@@ -28,6 +28,7 @@ const paises = [
   {nombre:"Paris", tarifa: 5}
 ];
 
+
 //creo la clase factura que va tener los atributos y metodos
 class factura{
   constructor(cliente, mes){
@@ -100,8 +101,9 @@ formMensaje.addEventListener('submit', (event) => { //evento submit
 
   event.preventDefault();
 
-  if (cliente.value && mes.value){
+  if (mes.value < 12 && mes.value > 0 && clientes.some(e => e.nombre.toLowerCase() === cliente.value.toLowerCase())){
     //creo un objeto factura
+    
     const miFactura = new factura(
       cliente.value,
       mes.value
@@ -110,7 +112,7 @@ formMensaje.addEventListener('submit', (event) => { //evento submit
     const consumoLocal = miFactura.getConsumoLocal()
     const consumoNacional = miFactura.getConsumoNacional()
     const consumoInternacional = miFactura.getConsumoInternacional()
-    const consumoTotal = (consumoLocal + consumoNacional + consumoInternacional)
+    const consumoTotal = (100 + consumoLocal + consumoNacional + consumoInternacional)
 
     let direccion = '';
     clientes.forEach(elemento => {
@@ -143,7 +145,7 @@ formMensaje.addEventListener('submit', (event) => { //evento submit
             <tr>
               <td>Consumo Basico</td>
               
-              <td>100.00$</td>
+              <td>100$</td>
             </tr>
             <tr>
               <td>Consumo Local</td>
@@ -166,6 +168,12 @@ formMensaje.addEventListener('submit', (event) => { //evento submit
           </tfoot>
         </table>
       </div>`
+    facturasContainer.innerHTML = "";
+    facturasContainer.appendChild(p);
+  }else{
+    let p = document.createElement('p');
+    
+    p.innerHTML = `<h1>Intente con un cliente y mes valido</h1>`
     facturasContainer.innerHTML = "";
     facturasContainer.appendChild(p);
   }
