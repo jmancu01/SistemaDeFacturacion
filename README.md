@@ -7,11 +7,11 @@ Características 📋
 El usuario ingresara al sistema, se le pedirá ingresar el cliente y mes que desea facturar.
 Es importante que cumpla con los requerimiento para poder generarlo, estos son: 
 - El cliente tiene que pertenecer a lista de clientes registrada 
-- el mes tiene que ser valido.
+- el mes tiene que ser valido (mayor a 0 y menor a 12, debe haber llamadas realizadas en ese mes).
 
-El sistema va a calcular el consumo del cliente dentro del mes seleccionado. Dando como resultado una factura con el desgloce de consumo y el precio final.
+El sistema va a calcular el consumo del cliente dentro del mes seleccionado. Dando como resultado una factura con el desgloce de consumo(consumo basico: 100$) y el precio final.
 
-Pre-requisitos 🔧 - Abrir la ruta donde guardo el archivo HTML con su browser de preferencia.
+Pre-requisitos 🔧 - Es importante iniciar un servidor local, utilizando su herramienta como la extension de vscode: Live Server. Usar su browser de preferencia (Chrome, Edge), Internet Explorer no es compatible. 
 
 Construido con Javascript y HTML 🛠️
 
