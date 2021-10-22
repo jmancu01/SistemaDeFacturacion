@@ -43,7 +43,7 @@ formMensaje.addEventListener('submit', (event) => {
       <div>
         <div>
           <h1>${miFactura.cliente}</h1>
-          <p>Factura mes numero: ${meses[Number.parseInt(miFactura.mes) - 1]}</p>
+          <p>Factura mes: ${meses[Number.parseInt(miFactura.mes) - 1]}</p>
           <p>${direccion}</p>
          
         </div>
@@ -61,7 +61,7 @@ formMensaje.addEventListener('submit', (event) => {
             <tr>
               <td>Consumo Basico</td>
               
-              <td>${consumo.basico}</td>
+              <td>${consumo.basico}$</td>
             </tr>
             <tr>
               <td>Consumo Local</td>
